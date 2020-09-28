@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../util/mongodb"
+import { connectToDatabase } from "../../util/mongodb"
 
 export default async (req, res) => {
     const { db } = await connectToDatabase();
@@ -11,4 +11,4 @@ export default async (req, res) => {
         .toArray();
     
     res.json(movies);
-};
+}
