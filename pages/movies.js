@@ -8,8 +8,8 @@ export default function Movies({ movies }) {
                 <small>(According to Metacritic)</small>
             </p>
             <ul>
-                {movies.map((movie) => (
-                    <li>
+                {movies.map((movie, index) => (
+                    <li id={index}>
                         <h2>{movie.title}</h2>
                         <h3>{movie.metacritic}</h3>
                         <p>{movie.plot}</p>
