@@ -3,14 +3,14 @@ import { connectToDatabase } from "../../util/mongodb"
 export default async (req, res) => {
     const { db } = await connectToDatabase();
 
-    const movies = await db
-        .collection("movies")
-        .find({})
-        .sort({ metacritic: -1 })
-        .limit(20)
-        .toArray();
+    // const movies = await db
+    //     .collection("movies")
+    //     .find({})
+    //     .sort({ year: 1 })
+    //     .limit(20)
+    //     .toArray();
     
-    res.json(movies);
+    // res.json(movies);
     
     // let newFood = { name: "Cake", calories: 250 };
 
@@ -22,12 +22,12 @@ export default async (req, res) => {
     //     }
     // });
 
-    // const foods = await db
-    //     .collection("food")
-    //     .find({})
-    //     .sort({ calories: -1 })
-    //     .limit(20)
-    //     .toArray();
+    const foods = await db
+        .collection("food")
+        .find({})
+        .sort({ calories: -1 })
+        .limit(20)
+        .toArray();
     
-    // res.json(foods);
+    res.json(foods);
 }

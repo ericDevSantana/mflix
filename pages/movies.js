@@ -26,7 +26,6 @@ export async function getServerSideProps() {
     const movies = await db
         .collection("movies")
         .find({})
-        .sort({ metacritic: -1 })
         .limit(20)
         .toArray();
 
